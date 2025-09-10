@@ -31,3 +31,10 @@ header {
     margin-left: 10px;
     
 }
+.productos {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: lightgray;
+}
