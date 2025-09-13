@@ -29,12 +29,27 @@ header {
 .titulo {
     color: darkgreen;
     margin-left: 10px;
+    font-variant-numeric: all-small-caps;
     
 }
+
 .productos {
     list-style: none;
     display: flex;
-    justify-content: space-around;
-    padding: 50px;
-    background-color: lightgray;
+    justify-content:space-around;
+    padding: 0;
+    background-color:aliceblue;
+
 }
+
+
+.carrito {
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: rgb(100, 0, 48);
+    text-decoration:none;
+}
+
