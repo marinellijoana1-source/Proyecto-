@@ -1,9 +1,12 @@
 *{margin:0 ; }
 body { 
     background-color:aliceblue;
-    font-family: Arial, sans-serif;
     
 
+}
+:root {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
 }
 
 header {
@@ -39,6 +42,7 @@ header {
     justify-content:space-around;
     padding: 0;
     background-color:aliceblue;
+    
 
 }
 
@@ -51,5 +55,6 @@ header {
     font-size: 30px;
     color: rgb(100, 0, 48);
     text-decoration:none;
+
 }
 
