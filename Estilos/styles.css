@@ -10,7 +10,7 @@
 body { font-family: 'Arial', sans-serif; background: var(--bg); color: #222; }
 
 
-.topbar {
+.encabezado {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,12 +27,12 @@ body { font-family: 'Arial', sans-serif; background: var(--bg); color: #222; }
 .nav-icons a { margin-left: 15px; font-size: 22px; color: var(--primary); }
 
 
-.hero {
+.ropita {
   text-align: center;
   padding: 40px 20px;
 }
-.hero h1 { font-size: 28px; color: var(--primary); margin-bottom: 10px; }
-.hero p { color: var(--muted); }
+.ropita h1 { font-size: 28px; color: var(--primary); margin-bottom: 10px; }
+.ropita p { color: var(--muted); }
 
 
 .categorias ul {
