@@ -23,7 +23,7 @@ body { font-family: 'Arial', sans-serif; background: var(--bg); color: #222; }
 }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logoimagen { width: 60px; }
-.titulo { font-size: 20px; color: var(--primary); }
+.titulo { font-size: 30px; color: var(--primary); }
 .nav-icons a { margin-left: 15px; font-size: 22px; color: var(--primary); }
 
 
@@ -94,3 +94,34 @@ footer {
 }
 footer p { margin: 5px 0; color: var(--muted); }
 .redes a { margin: 0 8px; font-size: 20px; color: var(--primary); }
+
+.carousel-container {
+      width: 100%;              
+      margin: 0px auto;       
+      overflow: hidden;        
+      border-radius: 15px;     
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    
+    .carousel-slide {
+      display: flex;
+      width: 95%;             
+      animation: scroll 12s infinite linear; 
+    }
+
+    
+    .carousel-slide img {
+      width: 95%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    
+    @keyframes scroll {
+      0%   { transform: translateX(0); }
+      33%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
