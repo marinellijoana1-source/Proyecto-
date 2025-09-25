@@ -107,7 +107,7 @@ footer p { margin: 5px 0; color: var(--muted); }
     .carousel-slide {
       display: flex;
       width: 95%;             
-      animation: scroll 12s infinite linear; 
+      animation: scroll 20s infinite linear; 
     }
 
     
