@@ -1,9 +1,13 @@
 
 const productos = [
-  { id: 1, nombre: "Campera Piña", precio: 41000, imagen: "imagen/imagen1.png.jpeg" },
-  { id: 2, nombre: "Producto 2", precio: 35000, imagen: "imagen/imagen2.png.jpeg" },
-  { id: 3, nombre: "Producto 3", precio: 25000, imagen: "imagen/imgbebe.png" },
-  { id: 4, nombre: "Producto 4", precio: 30000, imagen: "imagen/imagenn.png.jpeg" }
+  { id: 1, nombre: "Campera Piña. Talle del 8 al 12", 
+    precio: 41000, imagen: "imagen/imagen1.png.jpeg" },
+  { id: 2, nombre: "Chaleco de paño marrón, Pantanón de jean.Talle del 8 al 10",
+     precio: 35000, imagen: "imagen/imagen2.png.jpeg" },
+  { id: 3, nombre: "Enterito rayado. Talle del 1 a 6 meses", 
+    precio: 25000, imagen: "imagen/imgbebe.png" },
+  { id: 4, nombre: "Sueter con volados, Calza estampada. Talle de 6 al 12",
+     precio: 30000, imagen: "imagen/imagenn.png.jpeg" }
 ];
 
 
