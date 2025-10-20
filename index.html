@@ -9,24 +9,22 @@
 </head>
 <body>
    
- 
   <header class="encabezado">
     <div class="logo">
       <img class="logoimagen" src="imagen/pina.png" alt="Logo Pineapple Kids">
       <h2 class="titulo">Pineapple Kids</h2>
       <div class="busqueda">
-    <input type="text" placeholder="Buscar productos...">
-    <button>Buscar</button>
-  </div>
+        <input type="text" placeholder="Buscar productos...">
+        <button>Buscar</button>
+      </div>
     </div>
     <nav class="nav-icons">
       <a href="checkout.html" class="pago"><i class="bi bi-credit-card-2-front"></i></a>
       <a href="carrito.html" class="carrito"><i class="bi bi-cart"></i></a>
     </nav>
-    
   </header>
 
-  
+ 
   <section class="seccion-carrusel">
     <div class="carousel-container">
       <div class="carousel-slide">
@@ -37,13 +35,11 @@
     </div>
   </section>
 
-  
   <section class="ropita">
     <h1>Los más peques, con el mejor estilo 🍍</h1>
     <p>Ropa colorida, cómoda y divertida para niños, niñas y bebés.</p>
   </section>
 
-  
   <nav class="categorias">
     <ul>
       <li><a href="#">Niñas</a></li>
@@ -53,51 +49,42 @@
     </ul>
   </nav>
 
-  
   <main class="productos">
-    <article class="card">
-      <a href="./Product-detail.html">
-        <div class="imagen">
-          <img src="imagen/imagen1.png.jpeg" alt="Producto 1">
-          <span class="icono-corazon"><i class="bi bi-heart-fill"></i></span>
-        </div>
-        <p>Precio: $41,000</p>
-        <button class="btn-ver">Ver</button>
-      </a>
+    <article class="card" id="producto1">
+      <div class="imagen">
+        <img src="imagen/imagen1.png.jpeg" alt="Campera Piña">
+        <span class="icono-corazon"><i class="bi bi-heart-fill"></i></span>
+      </div>
+      <p>Precio: $41,000</p>
+      <a href="Product-detail.html?id=1" class="btn-ver">Ver</a>
     </article>
 
-    <article class="card">
-      <a href="./Product-detail.html">
-        <div class="imagen">
-          <img src="imagen/imagen2.png.jpeg" alt="Producto 2">
-        </div>
-        <p>Precio: $35,000</p>
-        <button class="btn-ver">Ver</button>
-      </a>
+    <article class="card" id="producto2">
+      <div class="imagen">
+        <img src="imagen/imagen2.png.jpeg" alt="Producto 2">
+      </div>
+      <p>Precio: $35,000</p>
+      <a href="Product-detail.html?id=2" class="btn-ver">Ver</a>
     </article>
 
-    <article class="card">
-      <a href="./Product-detail.html">
-        <div class="imagen">
-          <img src="imagen/imgbebe.png" alt="Producto 3">
-        </div>
-        <p>Precio: $25,000</p>
-        <button class="btn-ver">Ver</button>
-      </a>
+    <article class="card" id="producto3">
+      <div class="imagen">
+        <img src="imagen/imgbebe.png" alt="Producto 3">
+      </div>
+      <p>Precio: $25,000</p>
+      <a href="Product-detail.html?id=3" class="btn-ver">Ver</a>
     </article>
 
-    <article class="card">
-      <a href="./Product-detail.html">
-        <div class="imagen">
-          <img src="imagen/imagenn.png.jpeg" alt="Producto 4">
-        </div>
-        <p>Precio: $30,000</p>
-        <button class="btn-ver">Ver</button>
-      </a>
+    <article class="card" id="producto4">
+      <div class="imagen">
+        <img src="imagen/imagenn.png.jpeg" alt="Producto 4">
+      </div>
+      <p>Precio: $30,000</p>
+      <a href="Product-detail.html?id=4" class="btn-ver">Ver</a>
     </article>
   </main>
 
- <footer>
+  <footer>
     <p>📧 contacto@pineapplekids.com</p>
     <p>📍 Envíos a todo el país</p>
     <div class="redes">
@@ -107,6 +94,7 @@
     </div>
     <small>© 2025 Pineapple Kids</small>
   </footer>
+
+  <script src="./app.js"></script>
 </body>
- <script src="./app.js"></script>
 </html>
