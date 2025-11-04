@@ -1,19 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- CONFIGURACIÓN DE AIRTABLE ---
-    // IMPORTANTE: Reemplaza estos valores con los de tu base de datos de Airtable.
     const AIRTABLE_API_KEY = "patEsxvShCRLLhs5u.128c7691b4f14c9064d54fff09bcc0b03c5992ddb9254aa664f8319df260b3fa"; // <-- PEGA TU TOKEN AQUÍ
     const AIRTABLE_BASE_ID = "appMU7tXjFzWPHHmN";                 // <-- Tu Base ID
     const AIRTABLE_TABLE_NAME = "productos";              // <-- Tu Table ID
 
     const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
 
-    // --- SELECTORES DEL DOM (Tus variables originales) ---
+   
     const contenedorProductos = document.querySelector(".productos");
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
 
-    // --- FUNCIÓN PARA CREAR ARTÍCULO (Tu función original) ---
+    
     function crearAtriculoProducto(producto) {
         const articuloProducto = document.createElement("article");
         articuloProducto.setAttribute("class", "card");
@@ -30,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return articuloProducto;
     }
 
-    // --- FUNCIÓN PRINCIPAL PARA CARGAR PRODUCTOS DESDE AIRTABLE ---
+    
     async function cargarYMostrarProductos() {
         try {
             const response = await fetch(airtableUrl, {
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
             
-            // Mapeamos los registros de Airtable a la estructura de tu JSON original
+            
             const productos = data.records.map(record => {
                 const fields = record.fields;
                 return {
@@ -56,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
             });
 
-            // Usamos tu lógica original para mostrar los productos
+            
             productos.forEach((producto) => {
                 const articuloProducto = crearAtriculoProducto(producto);
                 contenedorProductos.appendChild(articuloProducto);
             });
 
-            // Si estamos en la página de detalle, ejecutamos esa lógica
+            
             if (!isNaN(id)) {
                 setupProductDetailPage(productos);
             }
@@ -75,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- LÓGICA DE LA PÁGINA DE DETALLE (Tu código original) ---
+    
     function setupProductDetailPage(productos) {
         const producto = productos.find(p => p.id === id);
         if (producto) {
@@ -102,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- LÓGICA DEL CARRITO (Tu código original) ---
+    
     const listaCarrito = document.getElementById("lista-carrito");
     if (listaCarrito) {
         const totalElemento = document.getElementById("total");
@@ -143,8 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- EJECUCIÓN INICIAL ---
-    // Llamamos a nuestra nueva función para cargar todo desde Airtable
+    
     cargarYMostrarProductos();
 
 });
