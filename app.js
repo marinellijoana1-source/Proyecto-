@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const AIRTABLE_API_KEY = "patEsxvShCRLLhs5u.128c7691b4f14c9064d54fff09bcc0b03c5992ddb9254aa664f8319df260b3fa"; 
+    const AIRTABLE_API_KEY = "pat4gX2qoL4gmFOVq.def11c80ce07fae5085477047e1bce2c1c181a9adf4cebf84232146287d1f0fc"; 
     const AIRTABLE_BASE_ID = "appMU7tXjFzWPHHmN";                
     const AIRTABLE_TABLE_NAME = "productos";              
 
