@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const AIRTABLE_API_KEY = "patEsxvShCRLLhs5u.128c7691b4f14c9064d54fff09bcc0b03c5992ddb9254aa664f8319df260b3fa"; // <-- PEGA TU TOKEN AQUÍ
-    const AIRTABLE_BASE_ID = "appMU7tXjFzWPHHmN";                 // <-- Tu Base ID
-    const AIRTABLE_TABLE_NAME = "productos";              // <-- Tu Table ID
+    const AIRTABLE_API_KEY = "patEsxvShCRLLhs5u.128c7691b4f14c9064d54fff09bcc0b03c5992ddb9254aa664f8319df260b3fa"; 
+    const AIRTABLE_BASE_ID = "appMU7tXjFzWPHHmN";                
+    const AIRTABLE_TABLE_NAME = "productos";              
 
     const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
 
