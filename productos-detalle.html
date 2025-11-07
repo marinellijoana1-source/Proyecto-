@@ -3,22 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle de producto</title>
+  <title>Pineapple Kids - Detalle de Producto</title>
   <link rel="stylesheet" href="Estilos/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-  <a href="index.html">Volver a productos</a>
-
-  <section>
-    <div class="detalle-productos">
-     <img src="Productos" width="200px" id="detalle-imagen">
-      <p class="nombre"></p>
-      <p class="precio"></p>
-      <button class="btn-agregar">Agregar al carrito</button>
+  <header class="encabezado">
+    <div class="logo">
+      <img class="logoimagen" src="imagen/pina.png" alt="Logo Pineapple Kids">
+      <h2 class="titulo">Pineapple Kids</h2>
     </div>
-  </section>
+    <nav class="nav-icons">
+      <a href="index.html"><i class="bi bi-house"></i></a>
+      <a href="carrito.html" class="carrito"><i class="bi bi-cart"></i></a>
+    </nav>
+  </header>
 
-  <script type="module" src="./js/detalle.js"></script>
+  <main class="detalle-producto">
+    <div class="contenedor-detalle">
+      <img id="detalle-imagen" alt="Producto" width="300px">
+      <div class="info-detalle">
+        <h1 class="nombre"></h1>
+        <p class="precio"></p>
+        <p class="descripcion"></p>
+        <button class="btn-agregar">Agregar al carrito 🛒</button>
+      </div>
+    </div>
+  </main>
 
+  <footer>
+    <p>📧 contacto@pineapplekids.com</p>
+    <p>📍 Envíos a todo el país</p>
+    <div class="redes">
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-whatsapp"></i></a>
+    </div>
+    <small>© 2025 Pineapple Kids</small>
+  </footer>
+
+  <!-- Script -->
+ <script type="module" src="./js/productos.js"></script>
 </body>
 </html>
+

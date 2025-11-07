@@ -1,37 +1,30 @@
-// api.js
-const AIRTABLE_API_KEY = "pat4gX2qoL4gmFOVq.def11c80ce07fae5085477047e1bce2c1c181a9adf4cebf84232146287d1f0fc";
-const AIRTABLE_BASE_ID = "appMU7tXjFzWPHHmN";
-const AIRTABLE_TABLE_NAME = "productos";
-
-const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
+import { AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME } from './env.js';
 
 export async function obtenerProductos() {
-    try {
-        const response = await fetch(airtableUrl, {
-            headers: {
-                'Authorization': `Bearer ${AIRTABLE_API_KEY}`
-            }
-        });
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
 
-        if (!response.ok) {
-            throw new Error(`Error de la API: ${response.statusText}`);
-        }
+  try {
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${AIRTABLE_API_KEY}` }
+    });
 
-        const data = await response.json();
+    const data = await response.json();
+    console.log("Respuesta Airtable:", data);
+    
+    return data.records.map(record => {
+      const f = record.fields;
+      return {
+        id: record.id,
+        nombre: f['Nombre-producto'] || 'Sin nombre',
+        descripcion: f['Descripcion'] || 'Sin descripción',
+        imagen: f.imagen?.[0]?.url || 'https://via.placeholder.com/300x300.png?text=Sin+Imagen',
+        precio: f['Precio'] || 0,
+      };
 
-        return data.records.map(record => {
-            const fields = record.fields;
-            return {
-                id: record.id,
-                nombre: fields['Nombre-producto'] || 'Sin nombre',
-                precio: fields.Precio || 0,
-                imagen: fields.imagen && fields.imagen.length > 0
-                    ? fields.imagen[0].url
-                    : 'https://via.placeholder.com/300x300.png?text=Sin+Imagen'
-            };
-        });
-    } catch (error) {
-        console.error("No se pudieron cargar los productos:", error);
-        return [];
-    }
+    });
+
+  } catch (error) {
+    console.error("Error al obtener productos:", error);
+    return [];
+  }
 }

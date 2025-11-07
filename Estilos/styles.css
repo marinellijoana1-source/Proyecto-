@@ -394,3 +394,71 @@ footer p { margin: 5px 0; color: var(--muted); }
   }
 }
 
+.checkout {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.checkout h1, .checkout h3 {
+  text-align: center;
+  color: #444;
+}
+
+.form-grupo {
+  margin-bottom: 15px;
+}
+
+.form-grupo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-grupo input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form-fila {
+  display: flex;
+  gap: 10px;
+}
+
+#resumen-carrito {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+#resumen-carrito ul {
+  list-style: none;
+  padding: 0;
+}
+
+#resumen-carrito li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.btn-pagar {
+  background: #ffd966;
+  color: #333;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-pagar:hover {
+  background: #ffcc33;
+}

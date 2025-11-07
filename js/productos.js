@@ -1,47 +1,33 @@
 import { obtenerProductos } from './api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const contenedorProductos = document.querySelector(".productos");
-    const inputBusqueda = document.querySelector(".busqueda input");
-    const btnBusqueda = document.querySelector(".busqueda button");
+  const contenedor = document.querySelector(".productos");
+  
+  if (!contenedor) return; // Por si no existe el contenedor
 
-    let productos = await obtenerProductos();
+  try {
+    const productos = await obtenerProductos();
 
-    // 🔹 Función para mostrar productos en el DOM
-    function mostrarProductos(lista) {
-        contenedorProductos.innerHTML = ""; // Limpia el contenedor
-        lista.forEach(producto => {
-            const articulo = document.createElement("article");
-            articulo.classList.add("card");
-            articulo.innerHTML = `
-                <div class="imagen">
-                    <img src="${producto.imagen}" alt="${producto.nombre}">
-                    <span class="icono-corazon"><i class="bi bi-heart-fill"></i></span>
-                </div>
-                <p>${producto.nombre}</p>
-                <p>Precio: $${producto.precio}</p>
-                <a href="Productos-detalle.html?id=${producto.id}" class="btn-ver">Ver</a>
-            `;
-            contenedorProductos.appendChild(articulo);
-        });
+    if (!productos.length) {
+      contenedor.innerHTML = "<p>No se pudieron cargar los productos.</p>";
+      return;
     }
 
-    // 🔹 Mostrar todos los productos al cargar
-    mostrarProductos(productos);
-
-    // 🔹 Filtro de búsqueda
-    function filtrarProductos() {
-        const texto = inputBusqueda.value.toLowerCase().trim();
-        const filtrados = productos.filter(p =>
-            p.nombre.toLowerCase().includes(texto)
-        );
-        mostrarProductos(filtrados);
-    }
-
-    // 🔹 Eventos para buscar
-    btnBusqueda.addEventListener("click", filtrarProductos);
-    inputBusqueda.addEventListener("keyup", (e) => {
-        if (e.key === "Enter") filtrarProductos();
+    productos.forEach(p => {
+      const card = document.createElement("article");
+      card.classList.add("card");
+      card.innerHTML = `
+        <div class="imagen">
+          <img src="${p.imagen}" alt="${p.nombre}">
+        </div>
+        <h3>${p.nombre}</h3>
+        <p>Precio: $${p.precio}</p>
+        <a href="productos-detalle.html?id=${'producto.id'}" class="btn-ver">Ver</a>
+      `;
+      contenedor.appendChild(card);
     });
+  } catch (error) {
+    console.error("Error al cargar productos:", error);
+    contenedor.innerHTML = "<p>Error al cargar los productos.</p>";
+  }
 });
-
