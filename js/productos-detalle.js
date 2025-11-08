@@ -1,11 +1,11 @@
 import { obtenerProductos } from './api.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
-  const id = params.get('id'); // obtenemos el ID desde la URL
+  const id = params.get('id'); 
 
   if (!id) {
-    document.querySelector('.productos-detalle').innerHTML = "<p>No se especificó ningún producto.</p>";
+    document.querySelector('.detalle-producto').innerHTML = "<p>No se especificó ningún producto.</p>";
     return;
   }
 
@@ -14,10 +14,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const producto = productos.find(p => p.id === id);
 
     if (!producto) {
-      document.querySelector('.productos-detalle').innerHTML = "<p>Producto no encontrado.</p>";
+      document.querySelector('.detalle-producto').innerHTML = "<p>Producto no encontrado.</p>";
       return;
     }
 
+    // Mostrar los datos del producto
     document.querySelector('#detalle-imagen').src = producto.imagen;
     document.querySelector('#detalle-imagen').alt = producto.nombre;
     document.querySelector('.nombre').textContent = producto.nombre;

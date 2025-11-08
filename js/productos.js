@@ -1,33 +1,32 @@
 import { obtenerProductos } from './api.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const contenedor = document.querySelector(".productos");
-  
-  if (!contenedor) return; // Por si no existe el contenedor
 
   try {
     const productos = await obtenerProductos();
 
-    if (!productos.length) {
-      contenedor.innerHTML = "<p>No se pudieron cargar los productos.</p>";
-      return;
-    }
+    contenedor.innerHTML = ""; // Limpiamos el contenedor por si acaso
 
-    productos.forEach(p => {
-      const card = document.createElement("article");
-      card.classList.add("card");
-      card.innerHTML = `
+    productos.forEach(producto => {
+      const articulo = document.createElement("article");
+      articulo.classList.add("card");
+
+      articulo.innerHTML = `
         <div class="imagen">
-          <img src="${p.imagen}" alt="${p.nombre}">
+          <img src="${producto.imagen}" alt="${producto.nombre}">
         </div>
-        <h3>${p.nombre}</h3>
-        <p>Precio: $${p.precio}</p>
-        <a href="productos-detalle.html?id=${'producto.id'}" class="btn-ver">Ver</a>
+        <h3>${producto.nombre}</h3>
+        <p class="precio">$${producto.precio}</p>
+        <a href="productos-detalle.html?id=${producto.id}" class="btn-ver">Ver</a>
       `;
-      contenedor.appendChild(card);
+
+      contenedor.appendChild(articulo);
     });
+
   } catch (error) {
     console.error("Error al cargar productos:", error);
     contenedor.innerHTML = "<p>Error al cargar los productos.</p>";
   }
 });
+
