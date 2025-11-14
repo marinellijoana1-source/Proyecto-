@@ -7,7 +7,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let productos = [];
 
-  
+  // --- Función para actualizar contador del carrito ---
+  function actualizarCantidadCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const cantidadTotal = carrito.reduce((acc, p) => acc + p.cantidad, 0);
+    const cantidadElem = document.getElementById('cantidad-carrito');
+    if (cantidadElem) cantidadElem.textContent = cantidadTotal;
+  }
+
+  // Mostrar productos en pantalla
   function mostrarProductos(lista) {
     contenedor.innerHTML = "";
 
@@ -36,6 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     productos = await obtenerProductos();
     mostrarProductos(productos);
+    actualizarCantidadCarrito(); // ✅ actualizar contador al cargar
   } catch (error) {
     console.error("Error al cargar productos:", error);
     contenedor.innerHTML = "<p>Error al cargar los productos.</p>";
@@ -50,7 +59,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     mostrarProductos(filtrados);
   });
 
-  // También buscar al presionar Enter
   inputBuscar.addEventListener("keyup", e => {
     if (e.key === "Enter") {
       const texto = inputBuscar.value.toLowerCase().trim();

@@ -18,9 +18,10 @@ async function cargarProductos() {
       <td><img src="${prod["imagen"] || 'https://placehold.co/60?text=Sin+Img'}" width="60"></td>
       <td>${prod.precio}</td>
       <td>
-        <button class="btn-ver" data-id="${prod.id}" data-accion="editar">✏️</button>
-        <button class="btn-ver" data-id="${prod.id}" data-accion="eliminar">🗑️</button>
+      <button class="btn-ver" data-id="${prod.id}" data-accion="editar">Editar</button>
+      <button class="btn-ver" data-id="${prod.id}" data-accion="eliminar">Eliminar</button>
       </td>
+
     `;
     tabla.appendChild(fila);
   });

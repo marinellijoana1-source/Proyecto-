@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>${producto.nombre}</h3>
           <p>Precio: $${producto.precio}</p>
           <p>Cantidad: ${producto.cantidad}</p>
-          <button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
+          <button class="btn-ver" data-id="${producto.id}">Eliminar</button>
+
         </div>
       `;
       contenedor.appendChild(item);

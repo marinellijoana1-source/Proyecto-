@@ -529,3 +529,19 @@ footer p { margin: 5px 0; color: var(--muted); }
   color: #ffb300; /* color piña */
   transform: rotate(20deg) scale(1.1);
 }
+
+.carrito {
+  position: relative;
+  display: inline-block;
+}
+
+.cantidad-carrito {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
