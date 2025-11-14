@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const listaCarrito = document.getElementById('lista-carrito');
   const totalCarrito = document.getElementById('total-carrito');
 
-  // 🛒 Cargar productos del carrito
+  
   let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
   function mostrarResumenCarrito() {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   mostrarResumenCarrito();
 
-  // 💳 Enviar formulario
+  
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     alert(`✅ ¡Gracias por tu compra, ${nombre}! 
 Tu pedido será enviado a: ${direccion}.`);
 
-    // Vaciar carrito después del pago
+    
     localStorage.removeItem('carrito');
     form.reset();
     listaCarrito.innerHTML = '';

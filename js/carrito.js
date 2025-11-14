@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     totalElemento.textContent = total.toFixed(2);
   }
 
-  // Eliminar un producto
+  
   contenedor.addEventListener("click", e => {
     if (e.target.classList.contains("btn-eliminar")) {
       const id = e.target.dataset.id;
@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Vaciar carrito
+  
   btnVaciar.addEventListener("click", () => {
     localStorage.removeItem("carrito");
     cargarCarrito();
   });
 
-  // Ir al checkout
+
   btnFinalizar.addEventListener("click", () => {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     if (carrito.length === 0) {

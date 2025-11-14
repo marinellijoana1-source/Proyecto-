@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración - Pineapple Kids</title>
+  <link rel="stylesheet" href="Estilos/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="logo">
+      <img class="logoimagen" src="imagen/pina.png" alt="Logo Pineapple Kids">
+      <h2 class="titulo">Panel de Administración</h2>
+    </div>
+    <nav class="nav-icons">
+      <a href="index.html"><i class="bi bi-house"></i></a>
+    </nav>
+  </header>
+
+  <main class="contenedor-admin">
+    <section class="formulario-admin">
+      <h2>Agregar / Editar Producto</h2>
+      <form id="formProducto">
+        <label for="nombre">Nombre del producto</label>
+        <input type="text" id="nombre" required>
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" rows="3" required></textarea>
+
+        <label for="imagen">URL de la imagen</label>
+        <input type="text" id="imagen" required placeholder="https://...">
+
+        <label for="precio">Precio</label>
+        <input type="number" id="precio" required step="0.01">
+
+        <button type="submit" class="btn-ver"> Guardar producto</button>
+      </form>
+    </section>
+
+    <section class="tabla-admin">
+      <h2>Listado de productos</h2>
+      <table id="tablaProductos">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>📧 contacto@pineapplekids.com</p>
+    <p>📍 Envíos a todo el país</p>
+    <div class="redes">
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-whatsapp"></i></a>
+    </div>
+    <small>© 2025 Pineapple Kids</small>
+  </footer>
+
+  <script type="module" src="./js/admin.js"></script>
+</body>
+</html>

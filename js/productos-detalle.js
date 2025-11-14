@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    // Mostrar datos del producto
+    
     img.src = producto.imagen;
     img.alt = producto.nombre;
     nombreElem.textContent = producto.nombre;
     precioElem.textContent = `$${producto.precio}`;
     descripcionElem.textContent = producto.descripcion || "";
 
-    // --- 🛒 Agregar al carrito ---
+    
     btnAgregar.addEventListener('click', () => {
       let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 

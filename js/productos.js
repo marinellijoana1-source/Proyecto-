@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let productos = [];
 
-  // Función para mostrar los productos en pantalla
+  
   function mostrarProductos(lista) {
     contenedor.innerHTML = "";
 
