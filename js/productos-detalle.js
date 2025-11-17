@@ -1,14 +1,14 @@
 import { obtenerProductos } from './api.js';
 
-
 function actualizarCantidadCarrito() {
   const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-  const cantidadTotal = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+  const cantidadTotal = carrito.reduce((acc, p) => acc + p.cantidad, 0);
   const cantidadElem = document.getElementById('cantidad-carrito');
-  if (cantidadElem) {
-    cantidadElem.textContent = cantidadTotal;
-  }
+  if (cantidadElem) cantidadElem.textContent = cantidadTotal;
 }
+
+document.addEventListener("DOMContentLoaded", actualizarCantidadCarrito);
+
 
 document.addEventListener('DOMContentLoaded', async () => {
   const params = new URLSearchParams(window.location.search);
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       localStorage.setItem('carrito', JSON.stringify(carrito));
       actualizarCantidadCarrito(); 
-      alert(`✅ "${producto.nombre}" se agregó al carrito.`);
+  
     });
 
   } catch (error) {
