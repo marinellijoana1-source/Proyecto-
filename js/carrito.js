@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contenedor.innerHTML = "";
 
     if (carrito.length === 0) {
-      contenedor.innerHTML = "<p>Tu carrito está vacío 🛒</p>";
+      contenedor.innerHTML = "<p>Tu carrito está vacío </p>";
       totalElemento.textContent = "0";
       return;
     }
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>${producto.nombre}</h3>
           <p>Precio: $${producto.precio}</p>
           <p>Cantidad: ${producto.cantidad}</p>
-          <button class="btn-ver" data-id="${producto.id}">Eliminar</button>
+          <button class="btn-ver btn-eliminar" data-id="${producto.id}">Eliminar</button>
 
         </div>
       `;
