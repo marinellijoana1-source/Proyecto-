@@ -12,26 +12,25 @@ export async function obtenerProductos() {
     console.log("Respuesta Airtable:", data);
 
     return data.records.map(record => {
-  const f = record.fields;
+      const f = record.fields;
 
-  
-  let imagenFinal = "https://via.placeholder.com/300x300.png?text=Sin+Imagen";
+      let imagenFinal = "https://via.placeholder.com/300x300.png?text=Sin+Imagen";
 
-  if (Array.isArray(f.imagen) && f.imagen.length > 0 && f.imagen[0].url) {
-    imagenFinal = f.imagen[0].url; 
-  } else if (typeof f.imagen === "string") {
-    imagenFinal = f.imagen; 
-  }
+      if (Array.isArray(f.imagen) && f.imagen.length > 0 && f.imagen[0].url) {
+        imagenFinal = f.imagen[0].url; 
+      } else if (typeof f.imagen === "string") {
+        imagenFinal = f.imagen; 
+      }
 
-  return {
-    id: record.id,
-    nombre: f["Nombre-producto"] || "Sin nombre",
-    descripcion: f["Descripción"] || "Sin descripción",
-    imagen: imagenFinal,
-    precio: f["Precio"] || 0
-  };
-});
-
+      return {
+        id: record.id,
+        nombre: f["Nombre-producto"] || "Sin nombre",
+        descripcion: f["Descripción"] || "Sin descripción",
+        imagen: imagenFinal,
+        precio: f["Precio"] || 0,
+        categoria: f["Categoria"] || ""   
+      };
+    });
 
   } catch (error) {
     console.error("Error al obtener productos:", error);

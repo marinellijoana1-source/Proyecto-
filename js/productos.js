@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const contenedor = document.querySelector(".productos");
   const inputBuscar = document.querySelector("#buscador");
   const btnBuscar = document.querySelector("#btnBuscar");
+  const botonesCategorias = document.querySelectorAll(".categorias a");
 
   let productos = [];
 
-  // --- Función para actualizar contador del carrito ---
   function actualizarCantidadCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const cantidadTotal = carrito.reduce((acc, p) => acc + p.cantidad, 0);
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (cantidadElem) cantidadElem.textContent = cantidadTotal;
   }
 
-  // Mostrar productos en pantalla
   function mostrarProductos(lista) {
     contenedor.innerHTML = "";
 
@@ -44,13 +43,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     productos = await obtenerProductos();
     mostrarProductos(productos);
-    actualizarCantidadCarrito(); // ✅ actualizar contador al cargar
+    actualizarCantidadCarrito();
   } catch (error) {
     console.error("Error al cargar productos:", error);
     contenedor.innerHTML = "<p>Error al cargar los productos.</p>";
   }
 
-  // --- 🔍 BUSCADOR ---
   btnBuscar.addEventListener("click", () => {
     const texto = inputBuscar.value.toLowerCase().trim();
     const filtrados = productos.filter(p =>
@@ -68,4 +66,25 @@ document.addEventListener("DOMContentLoaded", async () => {
       mostrarProductos(filtrados);
     }
   });
+
+  botonesCategorias.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const categoria = boton.dataset.categoria;
+
+      if (!categoria || categoria.trim() === "") {
+        mostrarProductos(productos);
+        return;
+      }
+
+      const filtrados = productos.filter(p =>
+        p.categoria &&
+        p.categoria.toLowerCase() === categoria.toLowerCase()
+      );
+
+      mostrarProductos(filtrados);
+    });
+  });
+
 });
