@@ -38,6 +38,27 @@ Abrir en el navegador:
 
 http://localhost:8080
 
+## Capturas de pantalla
+
+### Repositorio en GitHub
+
+[Repositorio](capturas/github.png)
+
+### Construcción de la imagen Docker
+
+[Docker Build](capturas/docker-build.png)
+
+### Contenedor en ejecución
+
+[Contenedor](capturas/contenedor.png)
+
+### Aplicación funcionando
+
+[Aplicación](capturas/aplicacion.png)
+
+
+
+
 ## estudiante
 
 Joana Marinelli
